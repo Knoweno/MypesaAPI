@@ -7,13 +7,13 @@ $errmsg  = '';
 $config = array(
     "env"              => "sandbox",
     "BusinessShortCode"=> "174379",
-    "key"              => "6ZTfjQGGySUWUxLnB4IUzmZy3AbD8Zkp", //Enter your consumer key here
-    "secret"           => "E2fGPbNy9JzHC93N", //Enter your consumer secret here
+    "key"              => "AQAm8q5QGGwx0mUCeV3yXaQeLKu5xth1", //Enter your consumer key here
+    "secret"           => "AylZjhMGrApgGrFm", //Enter your consumer secret here
     "username"         => "apitest",
     "TransactionType"  => "CustomerPayBillOnline",
     "passkey"          => "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919", //Enter your passkey here
-    "CallBackURL"      => "https://f899-41-90-64-220.ngrok.io/mpesa/callback.php", //When using Localhost, Use Ngrok to forward the response to your Localhost
-    "AccountReference" => "CompanyXLTD",
+    "CallBackURL"      => "https://f899-41-90-64-220.ngrok.io/mypesaapi/callback.php", //When using Localhost, Use Ngrok to forward the response to your Localhost
+    "AccountReference" => "OBYSOFT KENYA",
     "TransactionDesc"  => "Payment of X" ,
 );
 

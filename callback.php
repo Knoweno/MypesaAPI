@@ -20,7 +20,7 @@ file_put_contents('transaction_log', $data, FILE_APPEND); //Logs the results to 
 
 
 //Saves the result to the database
-$conn=new PDO("mysql:host=localhost;dbname=mpesa","root","");
+$conn=new PDO("mysql:host=localhost;dbname=fitkonnect","root","");
 $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 $stmt = $conn->query("SELECT * FROM orders ORDER BY ID DESC LIMIT 1");
