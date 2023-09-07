@@ -1,0 +1,126 @@
+
+Headers
+Key: Authorization
+Value: Basic QVFBbThxNVFHR3d4MG1VQ2VWM3lYYVFlTEt1NXh0aDE6QXlsWmpoTUdyQXBnR3JGbQ==
+​
+Body
+  {
+    "BusinessShortCode": 174379,
+    "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjMwOTA3MTI0MzI0",
+    "Timestamp": "20230907124324",
+    "TransactionType": "CustomerPayBillOnline",
+    "Amount": 1,
+    "PartyA": 254708374149,
+    "PartyB": 174379,
+    "PhoneNumber": 254706678979,
+    "CallBackURL": "https://mydomain.com/path",
+    "AccountReference": "CompanyXLTD",
+    "TransactionDesc": "Payment of X" 
+  }
+
+
+
+
+
+
+
+
+  <?
+$ch = curl_init('https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest');
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Authorization: Bearer SwtRkdpziQUG9hNg2FZil06AxHGb',
+    'Content-Type: application/json'
+]);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, {
+    "BusinessShortCode": 174379,
+    "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjMwOTA3MTI0MzI0",
+    "Timestamp": "20230907124324",
+    "TransactionType": "CustomerPayBillOnline",
+    "Amount": 1,
+    "PartyA": 254708374149,
+    "PartyB": 174379,
+    "PhoneNumber": 254706678979,
+    "CallBackURL": "https://mydomain.com/path",
+    "AccountReference": "CompanyXLTD",
+    "TransactionDesc": "Payment of X" 
+  });
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$response     = curl_exec($ch);
+curl_close($ch);
+echo $response;
+
+
+
+
+
+let headers = new Headers();
+headers.append("Content-Type", "application/json");
+headers.append("Authorization", "Bearer SwtRkdpziQUG9hNg2FZil06AxHGb");
+​
+fetch("https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest", {
+  method: 'POST',
+  headers,
+  body: JSON.stringify({
+    "BusinessShortCode": 174379,
+    "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjMwOTA3MTI0MzI0",
+    "Timestamp": "20230907124324",
+    "TransactionType": "CustomerPayBillOnline",
+    "Amount": 1,
+    "PartyA": 254708374149,
+    "PartyB": 174379,
+    "PhoneNumber": 254706678979,
+    "CallBackURL": "https://mydomain.com/path",
+    "AccountReference": "CompanyXLTD",
+    "TransactionDesc": "Payment of X" 
+  })
+})
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log(error));
+
+
+
+
+  
+Headers
+Key: Authorization
+Value: Basic QVFBbThxNVFHR3d4MG1VQ2VWM3lYYVFlTEt1NXh0aDE6QXlsWmpoTUdyQXBnR3JGbQ==
+​
+Body
+  {
+    "BusinessShortCode": 174379,
+    "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjMwOTA3MTI1MjIw",
+    "Timestamp": "20230907125220",
+    "TransactionType": "CustomerPayBillOnline",
+    "Amount": 1,
+    "PartyA": 254708374149,
+    "PartyB": 174379,
+    "PhoneNumber": 254706678979,
+    "CallBackURL": "https://fit.eastus.cloudapp.azure.com/mypesaapi/callback.php",
+    "AccountReference": "OBYSOFT",
+    "TransactionDesc": "Payment of X" 
+  }
+
+
+
+
+  
+Headers
+Key: Authorization
+Value: Basic QVFBbThxNVFHR3d4MG1VQ2VWM3lYYVFlTEt1NXh0aDE6QXlsWmpoTUdyQXBnR3JGbQ==
+​
+Body
+  {
+    "BusinessShortCode": 174379,
+    "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjMwOTA3MTI1NTQ5",
+    "Timestamp": "20230907125549",
+    "TransactionType": "CustomerPayBillOnline",
+    "Amount": 1,
+    "PartyA": 254798791717,
+    "PartyB": 174379,
+    "PhoneNumber": 254706678979,
+    "CallBackURL": "https://fit.eastus.cloudapp.azure.com/mypesaapi/callback.php",
+    "AccountReference": "OBYSOFT",
+    "TransactionDesc": "Payment of X" 
+  }

@@ -8,8 +8,10 @@
     $secret = "AylZjhMGrApgGrFm";  //Put your secret here
     $initiatorName = "testapi";
     $initiatorPassword = "Safaricom999!*!";
-    $results_url = "https://mfc.ke/callback.php"; //Endpoint to receive results Body
-    $timeout_url = "https://mfc.ke/callback.php"; //Endpoint to to go to on timeout
+    $results_url = "https://fit.eastus.cloudapp.azure.com/mypesaapi/callback.php"; //Endpoint to receive results Body
+    $timeout_url = "https://fit.eastus.cloudapp.azure.com/mypesaapi/callback.php"; //Endpoint to to go to on timeout
+//https://mfc.ke/callback.php
+    //http://fit.eastus.cloudapp.azure.com/mypesaapi/confirm-payment.php
 /*End  configurations*/
 
 /*Ensure transaction code is entered*/
