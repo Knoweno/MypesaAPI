@@ -1,6 +1,6 @@
 <?php
 
-
+include 'dbconfig.php';
 echo '<a href="index.php">Home<br /></a>';
 
 $content = file_get_contents('php://input'); //Receives the JSON Result from safaricom
@@ -20,7 +20,6 @@ file_put_contents('transaction_log', $data, FILE_APPEND); //Logs the results to 
 
 
 //Saves the result to the database
-$conn=new PDO("mysql:host=localhost;dbname=fitkonnect","root","");
 $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 $stmt = $conn->query("SELECT * FROM orders ORDER BY ID DESC LIMIT 1");

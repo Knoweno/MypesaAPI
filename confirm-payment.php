@@ -114,7 +114,6 @@ font-size:16px; }
         <button type="submit"><i class="ion-locked"></i> Confirm Payment</button>
     </div>
     </form>
-    <p style="color:#8F92C3;line-height:1.7;margin-top:5rem;">Copyright 2022 | All Rights Reserved | Made by MediaForce</p>
 </div>
    </body>
 </html>

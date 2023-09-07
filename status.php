@@ -2,12 +2,12 @@
 
 /*Call function with these configurations*/
     $env="sandbox";
-    $shortcode = '600988'; 
+    $shortcode = '174379'; 
     $type = '4';
-    $key = "6ZTfjQGGySUWUxLnB4IUzmZy3AbD8Zkp"; //Put your key here
-    $secret = "E2fGPbNy9JzHC93N";  //Put your secret here
+    $key = "AQAm8q5QGGwx0mUCeV3yXaQeLKu5xth1"; //Put your key here
+    $secret = "AylZjhMGrApgGrFm";  //Put your secret here
     $initiatorName = "testapi";
-    $initiatorPassword = "Safaricom978!";
+    $initiatorPassword = "Safaricom999!*!";
     $results_url = "https://mfc.ke/callback.php"; //Endpoint to receive results Body
     $timeout_url = "https://mfc.ke/callback.php"; //Endpoint to to go to on timeout
 /*End  configurations*/
