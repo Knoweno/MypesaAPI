@@ -14,7 +14,7 @@ include('express-stk.php');
 <div class="container">
     <form action='<?php echo $_SERVER['PHP_SELF'] ?>' method='POST'>
         <div class="text-center mt-5">
-            <h1>Awesome, that's KES 100</h1>
+        <h1>Make your Payments</h1>
         </div>
         <div class="card mt-4">
             <div class="card-body">

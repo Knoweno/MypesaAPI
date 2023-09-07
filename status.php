@@ -42,7 +42,7 @@
         
         $token = isset($result->{'access_token'}) ? $result->{'access_token'} : "N/A";
     
-        $publicKey = file_get_contents(__DIR__ . "/mpesa_public_cert.cer"); 
+        $publicKey = file_get_contents(__DIR__ . "/SandboxCertificate.cer"); 
         $isvalid = openssl_public_encrypt($initiatorPassword, $encrypted, $publicKey, OPENSSL_PKCS1_PADDING); 
         $password = base64_encode($encrypted);
     
