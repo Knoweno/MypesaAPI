@@ -20,6 +20,7 @@ $data .= PHP_EOL;
 //add space
 file_put_contents('transaction_log', $data, FILE_APPEND); //Logs the results to our log file
 
+//space 233
 
 //Saves the result to the database
 $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
