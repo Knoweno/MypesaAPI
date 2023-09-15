@@ -16,6 +16,8 @@ $dataToLog = array(
 
 $data = implode(" - ", $dataToLog);
 $data .= PHP_EOL;
+
+//add space
 file_put_contents('transaction_log', $data, FILE_APPEND); //Logs the results to our log file
 
 
