@@ -22,29 +22,93 @@ file_put_contents('transaction_log', $data, FILE_APPEND); //Logs the results to 
 
 //space 233
 
-//Saves the result to the database
-$conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+// //Saves the result to the database
+// $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-$stmt = $conn->query("SELECT * FROM orders ORDER BY ID DESC LIMIT 1");
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-foreach($rows as $row){
-	$ID = $row['ID'];
+// $stmt = $conn->query("SELECT * FROM orders ORDER BY ID DESC LIMIT 1");
+// $stmt->execute();
+// $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// foreach($rows as $row){
+// 	$ID = $row['ID'];
 
-	if($res['Body']['stkCallback']['ResultCode'] == '1032'){
-		$sql = $conn->query("UPDATE `orders` SET `Status` = 'CANCELLED' WHERE `orders`.`ID` = $ID");
-		$rs = $sql->execute();
-	 }else{
-		$sql = $conn->query("UPDATE `orders` SET `Status` = 'SUCCESS' WHERE `orders`.`ID` = $ID");
-		$rs = $sql->execute();
-	 }
+// 	if($res['Body']['stkCallback']['ResultCode'] == '1032'){
+// 		$sql = $conn->query("UPDATE `orders` SET `Status` = 'CANCELLED' WHERE `orders`.`ID` = $ID");
+// 		$rs = $sql->execute();
+// 	 }else{
+// 		$sql = $conn->query("UPDATE `orders` SET `Status` = 'SUCCESS' WHERE `orders`.`ID` = $ID");
+// 		$rs = $sql->execute();
+// 	 }
 
-	if($rs){
-		file_put_contents('error_log', "Records Inserted", FILE_APPEND);;
-	}else{
-		file_put_contents('error_log', "Failed to insert Records", FILE_APPEND);
-	}
+// 	if($rs){
+// 		file_put_contents('error_log', "Records Inserted", FILE_APPEND);;
+// 	}else{
+// 		file_put_contents('error_log', "Failed to insert Records", FILE_APPEND);
+// 	}
+// }
+
+
+// Create a mysqli connection
+$servername = "your_servername";
+$username = "your_username";
+$password = "your_password";
+$dbname = "your_dbname";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+// Select the latest record from the "orders" table
+$sql = "SELECT * FROM orders ORDER BY ID DESC LIMIT 1";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // Fetch the record
+    $row = $result->fetch_assoc();
+    $ID = $row['ID'];
+
+    // Check if the condition is met
+    if ($res['Body']['stkCallback']['ResultCode'] == '1032') {
+        // Update the status to 'CANCELLED'
+        $updateSql = "UPDATE `orders` SET `Status` = 'CANCELLED' WHERE `orders`.`ID` = $ID";
+    } else {
+        // Update the status to 'SUCCESS'
+        $updateSql = "UPDATE `orders` SET `Status` = 'SUCCESS' WHERE `orders`.`ID` = $ID";
+    }
+
+    // Execute the update query
+    if ($conn->query($updateSql) === TRUE) {
+        file_put_contents('error_log', "Records Inserted", FILE_APPEND);
+    } else {
+        file_put_contents('error_log', "Failed to insert Records", FILE_APPEND);
+    }
+} else {
+    echo "No records found";
+}
+
+// Close the connection
+$conn->close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>
 
